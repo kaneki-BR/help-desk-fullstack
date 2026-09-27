@@ -12,8 +12,8 @@ using SistemaChamados.Api.Data;
 namespace SistemaChamados.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260329235735_CriacaoInicial")]
-    partial class CriacaoInicial
+    [Migration("20260927180559_CriacaoIncial")]
+    partial class CriacaoIncial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,8 @@ namespace SistemaChamados.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataAbertura")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset>("DataAbertura")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Descricao")
                         .IsRequired()

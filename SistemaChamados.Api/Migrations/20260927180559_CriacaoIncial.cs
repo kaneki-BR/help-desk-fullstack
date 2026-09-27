@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SistemaChamados.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class CriacaoInicial : Migration
+    public partial class CriacaoIncial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace SistemaChamados.Api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DataAbertura = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataAbertura = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     status = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Prioridade = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

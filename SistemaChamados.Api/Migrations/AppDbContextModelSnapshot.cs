@@ -30,8 +30,8 @@ namespace SistemaChamados.Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataAbertura")
-                        .HasColumnType("datetime2");
+                    b.Property<DateTimeOffset>("DataAbertura")
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
