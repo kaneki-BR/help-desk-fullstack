@@ -12,7 +12,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Adicionar serviço de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
+
+// Habilitar o CORS na aplicação 
+app.UseCors("AllowReactApp");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
